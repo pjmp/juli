@@ -1,0 +1,24 @@
+[package]
+name = "juli"
+version = "0.1.0"
+authors = ["pomba"]
+edition = "2018"
+license-file = "LICENSE-MIT.md"
+readme = "README.md"
+description = """
+A description
+"""
+
+[dependencies]
+clap = {version = "2.33.0", default-features = false, features = ["suggestions"]}
+minreq = {version = "2.1.1", features = ["https", "json-using-serde"]}
+base64 = "0.12.0"
+serde = {version = "1.0.106", default-features = false, features = ["derive"]}
+git2 = "0.13.5"
+dirs = "2.0.2"
+bat = "0.15.0"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+panic = 'abort'
